@@ -20,17 +20,20 @@ readonly GENERATED_DIR="${TEST_PROTOS_DIR}/generated"
 readonly LATEST_COMMIT="${TEST_PROTOS_DIR}/latest_commit.txt"
 readonly LATEST_DIR="${GENERATED_DIR}/latest"
 
-readonly TMP_GOPATH="$(mktemp -d)"
+echo $LATEST_DIR
+readonly TMP_GOPATH="./tmp/go"
 trap "rm -rf ${TMP_GOPATH}" EXIT
+mkdir -p $TMP_GOPATH
 
 readonly GOPATH="${TMP_GOPATH}"
 readonly GOBIN="${TMP_GOPATH}/bin"
 readonly PATH="${TMP_GOPATH}/bin:${PATH}"
 
-readonly TMP_PROTOC_PATH="$(mktemp -d)"
+readonly TMP_PROTOC_PATH="./tmp/protoc"
 trap "rm -rf ${TMP_PROTOC_PATH}" EXIT
+mkdir -p $TMP_PROTOC_PATH
 
-readonly PROTOC_VERSION="3.5.1"
+readonly PROTOC_VERSION="21.9"
 readonly PROTOC_URL="https://github.com/google/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip"
 readonly PROTOC_BIN="${TMP_PROTOC_PATH}/protoc/bin/protoc"
 
@@ -46,6 +49,7 @@ generate_protos() {
     mkdir -p "${output_dir}/${version}"
     "${PROTOC_BIN}" \
       --proto_path="${schema_dir}/${version}" \
+      --go_opt=paths=source_relative \
       --go_out="${output_dir}/${version}" \
       "${schema_dir}/${version}"/*.proto
   done
@@ -58,25 +62,13 @@ install_protoc() {
     -d "${TMP_PROTOC_PATH}/protoc"
 }
 
-clone_protoc_gen_go() {
-  go get -u github.com/golang/protobuf/protoc-gen-go
-}
-
-build_protoc_gen_go() {
-  rm -rf "${TMP_GOPATH}/bin"
-  rm -rf "${TMP_GOPATH}/pkg"
-
-  mkdir -p "${TMP_GOPATH}/bin"
-  mkdir -p "${TMP_GOPATH}/pkg"
-  (
-    cd "${TMP_GOPATH}/src/github.com/golang/protobuf"
-    go install ./protoc-gen-go
-  )
+install_protoc_gen_go() {
+  GO_BIN="$HOME/${TMP_GOPATH}/bin" go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 }
 
 get_protoc_gen_commit() {
   (
-    cd "${TMP_GOPATH}/src/github.com/golang/protobuf"
+    cd "${TMP_GOPATH}/src/google.golang.org/protobuf"
     git rev-parse HEAD
   )
 }
@@ -86,12 +78,11 @@ run() {
   mkdir -p "${GENERATED_DIR}"
 
   install_protoc
-  clone_protoc_gen_go
-  build_protoc_gen_go
+  install_protoc_gen_go
   generate_protos "${SCHEMA_DIR}" "${LATEST_DIR}"
 
-  local commit="$(get_protoc_gen_commit)"
-  echo "${commit}" > "${LATEST_COMMIT}"
+  #local commit="$(get_protoc_gen_commit)"
+  #echo "${commit}" > "${LATEST_COMMIT}"
 }
 
 run
