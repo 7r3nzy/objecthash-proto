@@ -17,11 +17,11 @@ package wellknowntypes
 import (
 	"testing"
 
-	"github.com/golang/protobuf/proto"
-	any_pb "github.com/golang/protobuf/ptypes/any"
-	duration_pb "github.com/golang/protobuf/ptypes/duration"
-	struct_pb "github.com/golang/protobuf/ptypes/struct"
-	wrappers_pb "github.com/golang/protobuf/ptypes/wrappers"
+	"google.golang.org/protobuf/proto"
+	any_pb "google.golang.org/protobuf/ptypes/any"
+	duration_pb "google.golang.org/protobuf/ptypes/duration"
+	struct_pb "google.golang.org/protobuf/ptypes/struct"
+	wrappers_pb "google.golang.org/protobuf/ptypes/wrappers"
 
 	oi "github.com/7r3nzy/objecthash-proto/internal"
 	custom "github.com/7r3nzy/objecthash-proto/test_protos/custom"

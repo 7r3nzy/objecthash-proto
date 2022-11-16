@@ -17,8 +17,8 @@ package wellknowntypes
 import (
 	"testing"
 
-	"github.com/golang/protobuf/proto"
-	timestamp_pb "github.com/golang/protobuf/ptypes/timestamp"
+	"google.golang.org/protobuf/proto"
+	timestamp_pb "google.golang.org/protobuf/ptypes/timestamp"
 
 	oi "github.com/7r3nzy/objecthash-proto/internal"
 	pb2_latest "github.com/7r3nzy/objecthash-proto/test_protos/generated/latest/proto2"

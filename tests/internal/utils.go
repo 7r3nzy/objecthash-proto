@@ -19,7 +19,7 @@ import (
 
 	pb2_latest "github.com/7r3nzy/objecthash-proto/test_protos/generated/latest/proto2"
 
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 )
 
 // ForgetAllFields taks a proto message and turns all its fields into unknown

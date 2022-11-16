@@ -21,7 +21,7 @@ import (
 	"reflect"
 	"sort"
 
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 )
 
 // objectHasher is a configurable object for hashing protocol buffer objects.
@@ -42,7 +42,7 @@ type objectHasher struct {
 // HashProto returns the object hash of a given protocol buffer message.
 func (hasher *objectHasher) HashProto(pb proto.Message) (h []byte, err error) {
 	// Ensure that we can recover if the proto library panics.
-	// See: https://github.com/golang/protobuf/issues/478
+	// See: https://google.golang.org/protobuf/issues/478
 	defer func() {
 		if r := recover(); r != nil {
 			err = r.(error)

@@ -17,7 +17,7 @@ package tests
 import (
 	"testing"
 
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 
 	oi "github.com/7r3nzy/objecthash-proto/internal"
 	pb2_latest "github.com/7r3nzy/objecthash-proto/test_protos/generated/latest/proto2"

@@ -20,7 +20,7 @@ import (
 
 	"github.com/benlaurie/objecthash/go/objecthash"
 	oi "github.com/7r3nzy/objecthash-proto/internal"
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 )
 
 // TestCase represents typical ObjectHash-Proto test cases.

@@ -20,7 +20,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 )
 
 // wktProto is the interface satisfied by the proto library's well-known types.

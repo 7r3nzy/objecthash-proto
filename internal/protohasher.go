@@ -15,7 +15,7 @@
 package internal
 
 import (
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 )
 
 // ProtoHasher is an interface for hashers that are capable of returning an
