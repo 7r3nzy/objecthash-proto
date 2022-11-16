@@ -19,6 +19,7 @@ package schema.proto3;
 import "simple.proto";
 import "planets.proto";
 
+option go_package = "github.com/7r3nzy/objecthash-proto/test_protos/generated/latest/proto3";
 message BoolMaps {
   map<bool, bool> bool_to_bool = 1;
   map<bool, bytes> bool_to_bytes = 2;

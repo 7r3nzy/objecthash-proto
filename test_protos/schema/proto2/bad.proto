@@ -19,6 +19,8 @@ syntax = "proto2";
 
 package schema.proto2;
 
+option go_package = "github.com/7r3nzy/objecthash-proto/test_protos/generated/latest/proto2";
+
 // Should fail when encountering custom default values.
 message BadWithDefaults {
   optional string text = 1 [default = "N/A"];

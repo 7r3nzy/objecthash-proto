@@ -16,6 +16,8 @@ syntax = "proto2";
 
 package schema.proto2;
 
+option go_package = "github.com/7r3nzy/objecthash-proto/test_protos/generated/latest/proto2";
+
 message Empty {
 }
 

@@ -18,6 +18,7 @@ syntax = "proto3";
 
 package schema.proto3;
 
+option go_package = "github.com/7r3nzy/objecthash-proto/test_protos/generated/latest/proto3";
 message DoubleMessage {
   double value = 1;
   repeated double values = 2;

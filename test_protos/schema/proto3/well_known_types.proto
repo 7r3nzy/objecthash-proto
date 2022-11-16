@@ -25,6 +25,8 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
+option go_package = "github.com/7r3nzy/objecthash-proto/test_protos/generated/latest/proto3";
+
 message KnownTypes {
   google.protobuf.Any any_field = 1;
   google.protobuf.BoolValue bool_value_field = 2;
