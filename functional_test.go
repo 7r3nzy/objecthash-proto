@@ -17,9 +17,9 @@ package protohash
 import (
 	"testing"
 
-	oi "github.com/deepmind/objecthash-proto/internal"
-	"github.com/deepmind/objecthash-proto/tests"
-	wkt "github.com/deepmind/objecthash-proto/tests/well_known_types"
+	oi "github.com/7r3nzy/objecthash-proto/internal"
+	"github.com/7r3nzy/objecthash-proto/tests"
+	wkt "github.com/7r3nzy/objecthash-proto/tests/well_known_types"
 )
 
 func TestFunctional(t *testing.T) {

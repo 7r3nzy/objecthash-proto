@@ -19,7 +19,7 @@ import (
 	"testing"
 
 	"github.com/benlaurie/objecthash/go/objecthash"
-	oi "github.com/deepmind/objecthash-proto/internal"
+	oi "github.com/7r3nzy/objecthash-proto/internal"
 	"github.com/golang/protobuf/proto"
 )
 

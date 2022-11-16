@@ -1,10 +1,10 @@
 # ObjectHash-Proto
 
 [![Build
-Status](https://travis-ci.org/deepmind/objecthash-proto.svg?branch=master)](https://travis-ci.org/deepmind/objecthash-proto)
+Status](https://travis-ci.org/7r3nzy/objecthash-proto.svg?branch=master)](https://travis-ci.org/7r3nzy/objecthash-proto)
 [![Go Report
-Card](https://goreportcard.com/badge/github.com/deepmind/objecthash-proto)](https://goreportcard.com/report/github.com/deepmind/objecthash-proto)
-[![GoDoc](https://godoc.org/github.com/deepmind/objecthash-proto?status.svg)](https://godoc.org/github.com/deepmind/objecthash-proto)
+Card](https://goreportcard.com/badge/github.com/7r3nzy/objecthash-proto)](https://goreportcard.com/report/github.com/7r3nzy/objecthash-proto)
+[![GoDoc](https://godoc.org/github.com/7r3nzy/objecthash-proto?status.svg)](https://godoc.org/github.com/7r3nzy/objecthash-proto)
 
 The library is an implementation of [Ben Laurie's
 ObjectHash](https://github.com/benlaurie/objecthash) for protocol buffers.
